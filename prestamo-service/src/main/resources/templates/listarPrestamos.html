@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Listado de Prestamos</title>
+</head>
+<body>
+    <h1>Listado de Prestamos</h1>
+    
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Referencia del libro</th>
+        </tr>
+        <tr th:each="prestamo : ${prestamos}">
+            <td th:text="${prestamo.id}">ID</td>
+            <td th:text="${prestamo.referencia}">Referencia del libro</td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    
+    <!-- Enlace para volver al formulario de ingreso -->
+    <a th:href="@{/prestamos/create}">Agregar Prestamo</a>
+</body>
+</html>

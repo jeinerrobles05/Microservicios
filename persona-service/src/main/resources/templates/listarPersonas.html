@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Listado de Personas</title>
+</head>
+<body>
+    <h1>Listado de Personas</h1>
+    
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+        </tr>
+        <tr th:each="persona : ${personas}">
+            <td th:text="${persona.id}">ID</td>
+            <td th:text="${persona.nombre}">Nombre</td>
+            <td th:text="${persona.apellido}">Apellido</td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    
+    <!-- Enlace para volver al formulario de ingreso -->
+    <a th:href="@{/personas/create}">Agregar Persona</a>
+</body>
+</html>
